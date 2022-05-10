@@ -2,6 +2,7 @@ defmodule Rockelivery.Users.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @derive {Jason.Encoder, only: [:id, :name, :age, :cpf, :address, :email]}
   @primary_key {:id, :binary_id, autogenerate: true}
   @required_params [:address, :age, :cep, :cpf, :email, :password, :name]
 
